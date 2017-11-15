@@ -17,10 +17,32 @@ public strictfp class RobotPlayer {
             Robot.init(rc);
 
             switch (rc.getType()) {
+
                 case ARCHON:
                     robot = new Archon();
                     break;
+
                 case GARDENER:
+                    robot = new Gardener();
+                    break;
+
+                case SOLDIER:
+                    robot = new Soldier();
+                    break;
+
+                case TANK:
+                    robot = new Tank();
+                    break;
+
+                case SCOUT:
+                    robot = new Scout();
+                    break;
+
+                case LUMBERJACK:
+                    robot = new Lumberjack();
+                    break;
+
+                default:
                     robot = new Gardener();
                     break;
             }
@@ -33,12 +55,10 @@ public strictfp class RobotPlayer {
                 while (true) {
                     robot.onUpdate();
                 }
-
             } catch (Exception e) {
                 System.out.println("Exception in " + rc.getType());
                 e.printStackTrace();
             }
         }
     }
-
 }

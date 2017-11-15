@@ -11,6 +11,7 @@ abstract class Robot {
     static Random random;
     static Team myTeam;
     static Team enemy;
+    static float bodyRadius;
 
     public static void init(RobotController rc) throws GameActionException {
         Robot.robotController = rc;
@@ -19,6 +20,7 @@ abstract class Robot {
         spawnLocation = robotController.getLocation();
         myTeam = robotController.getTeam();
         enemy = myTeam.opponent();
+        bodyRadius = robotType.bodyRadius;
     }
 
     protected static Direction randomDirection() {
